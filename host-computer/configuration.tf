@@ -44,7 +44,7 @@ resource  "aws_instance"  "ec2_demo_units" {
 
     ami = "${var.ec2_ami}"
     instance_type = "${var.instance_size}"
-	security_groups = "${aws_security_group.demo_vpc.id}"
+	vpc_security_group_ids = "${aws_security_group.demo_vpc.id}"
 	user_data = "${file("${path.module}/scripts/demo_boot_script.sh")}"
 	iam_instance_profile = "${aws_iam_instance_profile.ec2_instance_role.name}"
 
