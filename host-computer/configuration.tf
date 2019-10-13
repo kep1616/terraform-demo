@@ -1,6 +1,3 @@
-provider "aws" {
-  region  = "${var.region}"
-}
 
 resource "aws_iam_role" "ec2_role" {
   name = "tfdemo_role"
