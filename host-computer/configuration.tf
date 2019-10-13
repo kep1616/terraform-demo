@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "aws_iam_role" "ec2_role" {
   name = "tfdemo_role"
-  assume_role_policy = "${var.ec2_role_policy}"
+  assume_role_policy = "${file("${path.module}/roles/ec2_demo_role.json")}"
 }
 
 resource "aws_iam_instance_profile" "ec2_instance_role" {
@@ -36,7 +36,7 @@ resource  "aws_instance"  "ec2_demo_units" {
     ami = "${var.ec2_ami}"
     instance_type = "${var.instance_size}"
 	security_groups = ["${aws_security_group.demo_vpc.id}"]
-	user_data = "${var.launch_script}"
+	user_data = "${file("${path.module}/scripts/demo_boot_script.sh")}"
 	iam_instance_profile = "${aws_iam_instance_profile.ec2_instance_role.name}"
 
 	tags = {
