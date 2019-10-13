@@ -12,7 +12,7 @@ resource "aws_iam_policy" "ec2_instance_policy" {
 
 resource "aws_iam_policy_attachment" "demo_policy_attachment" {
   name       = "tfdemo-attachment"
-  roles      = ["${aws_iam_role.ec2_instance_role.name}"]
+  roles      = ["${aws_iam_role.ec2_role.name}"]
   policy_arn = "${aws_iam_policy.ec2_instance_policy.arn}"
 }
 
