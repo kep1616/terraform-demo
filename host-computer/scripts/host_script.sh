@@ -22,3 +22,7 @@ sudo yum install git-core -y
 
 #Download Demo Files
 git clone https://github.com/kep1616/terraform-demo.git /home/ec2-user/terraform-demo
+
+#Setup Demo Files
+mv /home/ec2-user/terraform-demo/host-computer/* /home/ec2-user/
+rm -rf /home/ec2-user/terraform-demo
