@@ -1,0 +1,1 @@
+echo Everything installed successfully!

@@ -1,5 +1,5 @@
-variable "participants" {
-	description = "The number of people who want to participate in the demo."
+variable "number_of_instances" {
+	description = "The number of EC2 units you want to build."
 }
 
 variable "ec2_ami" {
