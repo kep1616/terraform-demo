@@ -49,6 +49,6 @@ resource  "aws_instance"  "ec2_demo_units" {
 	iam_instance_profile = "${aws_iam_instance_profile.ec2_instance_role.name}"
 
 	tags = {
-		Name = "tfdemo_unit_${count.index}"
+		Name = "tfdemo_unit_${count.index+1}"
 	}
 }
