@@ -10,7 +10,7 @@ if test -f "$configuration.tf"; then
     CONFIGURATION=true
 fi
 
-if TERRAFORM == true && CONFIGURATION == true; then
+if [ "$TERRAFORM" == true ] && [ "$CONFIGURATION" == true ]; then
 	echo You are ready to try terraform!
 else
 	echo Something went wrong...
