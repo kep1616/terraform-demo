@@ -1,12 +1,12 @@
 #!/bin/bash
-TERRAFORM=false
-CONFIGURATION=false
+TERRAFORM = false
+CONFIGURATION = false
 
 if terraform --version | grep v0.12.10; then
 		TERRAFORM=true
 fi
 
-if test -f "$configuration.tf"; then
+if test -f "configuration.tf"; then
     CONFIGURATION=true
 fi
 
